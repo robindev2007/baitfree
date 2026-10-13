@@ -65,3 +65,4 @@ export const PLATFORM_FLAGS: Record<TabId, PlatformFeatureFlag> = {
 export function isPlatformEnabled(platform: TabId): boolean {
   return Boolean(PLATFORM_FLAGS[platform]?.enabled);
 }
+
