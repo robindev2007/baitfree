@@ -10,6 +10,7 @@ import {
   PinterestIcon,
 } from './components/PlatformIcons';
 import type { TabId } from './types';
+import { isPlatformEnabled } from '@/features/shared/config';
 
 export interface NavTabItem {
   id: TabId;
@@ -18,7 +19,7 @@ export interface NavTabItem {
   accentColor: string;
 }
 
-export const NAV_TABS: NavTabItem[] = [
+export const ALL_NAV_TABS: NavTabItem[] = [
   {
     id: 'facebook',
     label: 'Facebook',
@@ -75,3 +76,9 @@ export const NAV_TABS: NavTabItem[] = [
   },
 ];
 
+/**
+ * Filtered list containing only platforms that are currently enabled in PLATFORM_FLAGS
+ */
+export const NAV_TABS: NavTabItem[] = ALL_NAV_TABS.filter((tab) =>
+  isPlatformEnabled(tab.id)
+);

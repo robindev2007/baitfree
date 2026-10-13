@@ -44,10 +44,14 @@ import type { PinterestSettings, PinterestSettingKey } from '@/features/pinteres
 import { SettingsView } from '@/features/settings/components/SettingsView';
 import { DEFAULT_GENERAL_SETTINGS } from '@/features/settings/constants';
 import type { GeneralSettings } from '@/features/settings/types';
+import { NAV_TABS } from '@/features/layout/constants';
+import { isPlatformEnabled } from '@/features/shared/config';
 
 export default function App() {
   const [activeTab, setActiveTab] = React.useState<TabId>(() => {
-    return (localStorage.getItem('baitfree_active_tab') as TabId) || 'facebook';
+    const saved = localStorage.getItem('baitfree_active_tab') as TabId;
+    if (saved && isPlatformEnabled(saved)) return saved;
+    return NAV_TABS[0]?.id || 'facebook';
   });
   const [isDark, setIsDark] = React.useState<boolean>(() => {
     const saved = localStorage.getItem('baitfree_theme');

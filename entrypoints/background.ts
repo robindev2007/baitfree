@@ -1,4 +1,5 @@
 import { getAllSettings, isFilterPaused, saveCategorySettings, broadcastRefresh } from '@/lib/storage';
+import { isPlatformEnabled } from '@/features/shared/config';
 
 export default defineBackground(() => {
   // Setup alarm to monitor temporary snooze expiration
@@ -91,7 +92,7 @@ export default defineBackground(() => {
         }
 
         // 2. Facebook
-        if (host.includes('facebook.com') || host.includes('fb.com')) {
+        if (isPlatformEnabled('facebook') && (host.includes('facebook.com') || host.includes('fb.com'))) {
           if (settings.facebookSettings.blockSite) {
             chrome.tabs.update(details.tabId, { url: blockedUrl });
             return;
@@ -111,7 +112,7 @@ export default defineBackground(() => {
         }
 
         // 3. YouTube
-        if (host.includes('youtube.com') || host.includes('youtu.be')) {
+        if (isPlatformEnabled('youtube') && (host.includes('youtube.com') || host.includes('youtu.be'))) {
           if (settings.youtubeSettings.blockSite) {
             chrome.tabs.update(details.tabId, { url: blockedUrl });
             return;
@@ -133,7 +134,7 @@ export default defineBackground(() => {
         }
 
         // 4. Twitter / X
-        if (host.includes('twitter.com') || host.includes('x.com')) {
+        if (isPlatformEnabled('twitter') && (host.includes('twitter.com') || host.includes('x.com'))) {
           if (settings.twitterSettings.blockSite) {
             chrome.tabs.update(details.tabId, { url: blockedUrl });
             return;
@@ -141,7 +142,7 @@ export default defineBackground(() => {
         }
 
         // 5. Reddit
-        if (host.includes('reddit.com')) {
+        if (isPlatformEnabled('reddit') && host.includes('reddit.com')) {
           if (settings.redditSettings.blockSite) {
             chrome.tabs.update(details.tabId, { url: blockedUrl });
             return;
@@ -149,7 +150,7 @@ export default defineBackground(() => {
         }
 
         // 6. Netflix
-        if (host.includes('netflix.com')) {
+        if (isPlatformEnabled('netflix') && host.includes('netflix.com')) {
           if (settings.netflixSettings.blockSite) {
             chrome.tabs.update(details.tabId, { url: blockedUrl });
             return;
@@ -157,7 +158,7 @@ export default defineBackground(() => {
         }
 
         // 7. LinkedIn
-        if (host.includes('linkedin.com')) {
+        if (isPlatformEnabled('linkedin') && host.includes('linkedin.com')) {
           if (settings.linkedinSettings.blockSite) {
             chrome.tabs.update(details.tabId, { url: blockedUrl });
             return;
@@ -165,7 +166,7 @@ export default defineBackground(() => {
         }
 
         // 8. Instagram
-        if (host.includes('instagram.com')) {
+        if (isPlatformEnabled('instagram') && host.includes('instagram.com')) {
           if (settings.instagramSettings.blockSite) {
             chrome.tabs.update(details.tabId, { url: blockedUrl });
             return;
@@ -173,7 +174,7 @@ export default defineBackground(() => {
         }
 
         // 9. Pinterest
-        if (host.includes('pinterest.com')) {
+        if (isPlatformEnabled('pinterest') && host.includes('pinterest.com')) {
           if (settings.pinterestSettings.blockSite) {
             chrome.tabs.update(details.tabId, { url: blockedUrl });
             return;
