@@ -8,7 +8,7 @@ export function SupportActions() {
   };
 
   const handleContact = () => {
-    window.open('mailto:support@undistracted.app', '_blank');
+    window.open('mailto:support@baitfree.app', '_blank');
   };
 
   return (

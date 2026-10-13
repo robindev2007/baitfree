@@ -89,7 +89,7 @@ export async function getAllSettings(): Promise<AppAllSettings> {
 
   if (!storage) {
     try {
-      const stored = localStorage.getItem('undistracted_all_settings');
+      const stored = localStorage.getItem('baitfree_all_settings');
       return stored ? JSON.parse(stored) : DEFAULT_ALL_SETTINGS;
     } catch {
       return DEFAULT_ALL_SETTINGS;
@@ -126,7 +126,7 @@ export async function saveCategorySettings<K extends keyof AppAllSettings>(
     try {
       const current = await getAllSettings();
       current[category] = value;
-      localStorage.setItem('undistracted_all_settings', JSON.stringify(current));
+      localStorage.setItem('baitfree_all_settings', JSON.stringify(current));
     } catch {
       // ignore in SSR/restricted environments
     }

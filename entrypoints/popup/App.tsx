@@ -47,15 +47,15 @@ import type { GeneralSettings } from '@/features/settings/types';
 
 export default function App() {
   const [activeTab, setActiveTab] = React.useState<TabId>(() => {
-    return (localStorage.getItem('undistracted_active_tab') as TabId) || 'facebook';
+    return (localStorage.getItem('baitfree_active_tab') as TabId) || 'facebook';
   });
   const [isDark, setIsDark] = React.useState<boolean>(() => {
-    const saved = localStorage.getItem('undistracted_theme');
+    const saved = localStorage.getItem('baitfree_theme');
     if (saved) return saved === 'dark';
     return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
   });
   const [isPro, setIsPro] = React.useState<boolean>(() => {
-    return localStorage.getItem('undistracted_has_paid') === 'true';
+    return localStorage.getItem('baitfree_has_paid') === 'true';
   });
   const [isLoaded, setIsLoaded] = React.useState(false);
 
@@ -98,17 +98,17 @@ export default function App() {
 
   // Save active tab
   React.useEffect(() => {
-    localStorage.setItem('undistracted_active_tab', activeTab);
+    localStorage.setItem('baitfree_active_tab', activeTab);
   }, [activeTab]);
 
   // Sync dark class on document element
   React.useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('undistracted_theme', 'dark');
+      localStorage.setItem('baitfree_theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('undistracted_theme', 'light');
+      localStorage.setItem('baitfree_theme', 'light');
     }
   }, [isDark]);
 
@@ -228,7 +228,7 @@ export default function App() {
   const togglePro = () => {
     const next = !isPro;
     setIsPro(next);
-    localStorage.setItem('undistracted_has_paid', String(next));
+    localStorage.setItem('baitfree_has_paid', String(next));
   };
 
   // Count active filters per platform

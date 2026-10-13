@@ -1,6 +1,6 @@
 {
-  "name": "wxt-react-starter",
-  "description": "manifest.json description",
+  "name": "baitfree",
+  "description": "BaitFree - Free your screen from clickbait, infinite feeds, and addictive algorithms",
   "private": true,
   "version": "0.0.0",
   "type": "module",

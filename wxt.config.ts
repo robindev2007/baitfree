@@ -7,8 +7,8 @@ export default defineConfig({
   modules: ['@wxt-dev/module-react'],
   outDir: 'dist',
   manifest: {
-    name: 'UnDistracted - Hide Social Media Feeds',
-    description: 'Rise above the time-sinks. Hide feeds, comments, and recommendations.',
+    name: 'BaitFree - Hide Feeds & Clickbait',
+    description: 'Browse intentionally. Free your screen from feeds, comments, clickbait, and recommendations.',
     permissions: ['storage', 'webNavigation', 'alarms', 'tabs'],
     host_permissions: [
       '*://*.youtube.com/*',

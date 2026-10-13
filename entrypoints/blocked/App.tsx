@@ -63,7 +63,7 @@ export default function App() {
 
         {/* Explanatory text */}
         <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-sm">
-          This site is currently blocked by your <span className="font-medium text-foreground">UnDistracted</span> settings to help you stay in the flow and avoid rabbit holes.
+          This site is currently blocked by your <span className="font-medium text-foreground">BaitFree</span> settings to help you stay in the flow and avoid rabbit holes.
         </p>
 
         {/* Action Buttons */}

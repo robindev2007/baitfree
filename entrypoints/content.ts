@@ -8,7 +8,7 @@ import { getLinkedInCSS } from '@/features/linkedin/css';
 import { getInstagramCSS } from '@/features/instagram/css';
 import { getPinterestCSS } from '@/features/pinterest/css';
 
-const STYLE_ID = 'undistracted-style';
+const STYLE_ID = 'baitfree-style';
 
 function applyStyles(css: string) {
   let styleEl = document.getElementById(STYLE_ID) as HTMLStyleElement | null;
@@ -59,7 +59,7 @@ async function runFilter() {
 
     applyStyles(css);
   } catch (err) {
-    console.error('Error applying UnDistracted filters:', err);
+    console.error('Error applying BaitFree filters:', err);
   }
 }
 

@@ -40,10 +40,10 @@ export default defineBackground(() => {
       if (paused) {
         chrome.action.setBadgeText({ text: 'OFF' });
         chrome.action.setBadgeBackgroundColor({ color: '#ef4444' });
-        chrome.action.setTitle({ title: 'UnDistracted: Filters Paused' });
+        chrome.action.setTitle({ title: 'BaitFree: Filters Paused' });
       } else {
         chrome.action.setBadgeText({ text: '' });
-        chrome.action.setTitle({ title: 'UnDistracted: Active' });
+        chrome.action.setTitle({ title: 'BaitFree: Active' });
       }
     } catch (e) {
       // ignore

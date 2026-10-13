@@ -18,9 +18,9 @@ export function Header({ isDark, onToggleTheme, isPro = false }: HeaderProps) {
         </div>
         <div className="flex items-baseline gap-1.5">
           <h1 className="text-sm font-semibold tracking-tight text-foreground">
-            UnDistracted
+            BaitFree
           </h1>
-          <span className="text-[10px] text-muted-foreground font-mono">v3.7</span>
+          <span className="text-[10px] text-muted-foreground font-mono">v1.0</span>
         </div>
       </div>
 
